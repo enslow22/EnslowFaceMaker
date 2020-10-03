@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-This is the XML layout for the Face Maker app.
+This is the XML activity_main for the Face Maker app.
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <SurfaceView
-        android:id="@+id/Face View"
+    <com.example.enslowfacemaker.Face
+        android:id="@+id/face"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <LinearLayout
