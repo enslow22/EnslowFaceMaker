@@ -1,33 +1,62 @@
 //@Ryan Enslow
 
 package com.example.enslowfacemaker;
-
-
-import android.app.Activity;
-import android.content.pm.ActivityInfo;
-import android.net.sip.SipSession;
 import android.os.Bundle;
-import android.view.SurfaceView;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 //This is where the main method will be run from. It is empty for now until I work on Part B
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener, SeekBar.OnSeekBarChangeListener, RadioGroup.OnCheckedChangeListener {
+
+    private Face faceView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //required lines of code
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
+        faceView = findViewById(R.id.face);
+        //See helper method description
+        initializeListeners();
+
 
     }
 
+    //Helper method to initialize all fo the listeners in the View
+    public void initializeListeners(){
+        //populateSpinner();
+
+        Button rFace = findViewById(R.id.randFace);
+        rFace.setOnClickListener(this);
+
+        RadioGroup groupSelect = findViewById(R.id.radioGroup);
+        groupSelect.setOnCheckedChangeListener(this);
+
+        RadioButton hairSelect = findViewById(R.id.radioHair);
+        hairSelect.setOnClickListener(this);
+
+        RadioButton eyesSelect = findViewById(R.id.radioEyes);
+        eyesSelect.setOnClickListener(this);
+
+        RadioButton skinSelect = findViewById(R.id.radioSkin);
+        skinSelect.setOnClickListener(this);
+
+        SeekBar redBar = findViewById(R.id.redBar);
+        redBar.setOnSeekBarChangeListener(this);
+
+        SeekBar greenBar = findViewById(R.id.greenBar);
+        greenBar.setOnSeekBarChangeListener(this);
+    }
 
     //This is the helper method that will populate the Spinner
     public void populateSpinner() {
@@ -47,6 +76,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        Log.d("onClick", "onClick: yoooo");
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
     }
 }

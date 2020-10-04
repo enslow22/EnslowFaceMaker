@@ -5,6 +5,7 @@
 package com.example.enslowfacemaker;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.view.View;
@@ -22,19 +23,22 @@ public class Face extends SurfaceView {
     public Face(Context context, AttributeSet attrs){
         super(context, attrs);
         setWillNotDraw(false);
-        this.skinColor = randomize(255.0);
-        this.eyeColor = randomize(255.0);
-        this.hairColor = randomize(255.0);
-        this.hairStyle = randomize(3.0);
+        this.skinColor = randomize(0xFFFFFF);
+        this.eyeColor = randomize(0xFFFFFF);
+        this.hairColor = randomize(0xFFFFFF);
+        this.hairStyle = randomize(3);
     }
 
     @Override
     public void onDraw(Canvas c){
+        int w = c.getWidth();
+        int h = c.getHeight();
+        Paint skinPaint = new Paint();
 
     }
 
     //This method takes in a double called x and returns a random integer from [0,x]
-    public int randomize(double max){
+    public int randomize(int max){
         return (int) (Math.random()*(max));
     }
 }
