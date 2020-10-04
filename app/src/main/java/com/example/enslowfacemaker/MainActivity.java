@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 //This is where the main method will be run from. It is empty for now until I work on Part B
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener, SeekBar.OnSeekBarChangeListener, RadioGroup.OnCheckedChangeListener {
 
-    private Face faceView = null;
+    private Face faceView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Log.d("onClick", "onClick: yoooo");
+        view.invalidate();
     }
 
     @Override
