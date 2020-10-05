@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="hair_array">
-        <item>hair1</item>
-        <item>hair2</item>
-        <item>hair3</item>
-
+        <item>Hair 1</item>
+        <item>Hair 2</item>
+        <item>Hair 3</item>
     </string-array>
 </resources>
